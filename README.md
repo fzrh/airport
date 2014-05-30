@@ -1,4 +1,5 @@
 Week 3 - Friday Challenge
+--------------------------
 
 This is our Week 3's friday challenge @ Makers Academy.
 
