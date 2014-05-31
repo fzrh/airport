@@ -13,18 +13,23 @@ describe Airport do
 
   context 'has maximum capacity' do
 
-    it "by default" do
+    it 'by default' do
       expect(airport.capacity).to eq 25
     end   
   end
 
-  context "traffic control tower" do
+  context 'traffic control tower' do
 
-    it "gives a plane permission to land" do
-
+    it 'gives a plane permission to land' do
       plane = double :plane
-      airport.gives_permission_to_land_to(plane)
+      airport.gives_permission_to_land_to plane
       expect(airport.hangar).to include plane
+    end
+
+    it 'gives a plane permission to take off' do
+      plane = double :plane
+      airport.gives_permission_to_take_off_to plane
+      expect(airport.hangar).to eq []
     end
   end
 end

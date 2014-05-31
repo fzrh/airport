@@ -12,8 +12,11 @@ class Airport
     @hangar ||= []
   end
 
-  def gives_permission_to_land_to(plane)
+  def gives_permission_to_land_to plane
   	hangar << plane
   end
 
+  def gives_permission_to_take_off_to plane
+  	@hangar
+  end
 end
