@@ -3,7 +3,9 @@ Airport Control Simulator
 
 ### Week 3 - Friday Challenge
 
-This was a test set by @ecomba whilst learning to code at Makers Academy. It was focused on object oriented programming and test driven development. 
+This was a test set at the end of Week 3 whilst learning to code at Makers Academy. 
+
+It was focused on object oriented programming and test driven development. 
 
 #### Task:
 
@@ -21,3 +23,6 @@ Finally, every plane must have a status indicating whether it's flying or landed
 + Ruby
 + RSpec
 
+#### How to run:
+
+> require './lib/heathrow_airport'
