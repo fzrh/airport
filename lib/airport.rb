@@ -13,6 +13,7 @@ class Airport
   end
 
   def gives_permission_to_land_to plane
+  	raise RuntimeError if full?
   	hangar << plane
   end
 

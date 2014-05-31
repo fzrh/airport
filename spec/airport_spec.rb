@@ -38,5 +38,11 @@ describe Airport do
       25.times {airport.gives_permission_to_land_to plane}
       expect(airport).to be_full
     end
+
+    it 'denies a landing request if the airport is full' do
+      plane = double :plane
+      airport.capacity.times {airport.gives_permission_to_land_to plane} 
+      expect(lambda { airport.gives_permission_to_land_to plane }).to raise_error(RuntimeError)
+    end
   end
 end
