@@ -1,4 +1,4 @@
-require 'plane'
+require './lib/plane'
 
 # When we create a new plane, it should have a "flying" status, thus planes can not be created in the airport.
 #
