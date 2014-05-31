@@ -31,5 +31,12 @@ describe Airport do
       airport.gives_permission_to_take_off_to plane
       expect(airport.hangar).to eq []
     end
+
+    it 'knows when the airport is full' do
+      plane = double :plane
+      expect(airport).not_to be_full
+      25.times {airport.gives_permission_to_land_to plane}
+      expect(airport).to be_full
+    end
   end
 end

@@ -19,4 +19,9 @@ class Airport
   def gives_permission_to_take_off_to plane
   	@hangar
   end
+
+  def full?
+  	hangar.count == capacity
+  end
+
 end
