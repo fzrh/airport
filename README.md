@@ -1,9 +1,11 @@
-Week 3 - Friday Challenge
+Airport Control Simulator
 --------------------------
 
-This is our Week 3's friday challenge @ Makers Academy.
+### Week 3 - Friday Challenge
 
-### Task:
+This was a test set by @ecomba whilst learning to code at Makers Academy. It was focused on object oriented programming and test driven development. 
+
+#### Task:
 
 Imagine you're writing software to control the flow of planes at an airport. 
 The planes can land and take off provided that the weather is sunny. 
@@ -14,7 +16,7 @@ You will need to use random number generator to set the weather (it is normally 
 In your tests, you'll need to use a double to override random weather. 
 Finally, every plane must have a status indicating whether it's flying or landed.
 
-### Technologies used:
+#### Technologies used:
 
 + Ruby
 + RSpec
