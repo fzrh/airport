@@ -2,9 +2,9 @@ module Weather
 
 	def weather_condition
 		random_number = Random.new
-		if (random_number.rand(1..5)) == (1 or 2 or 3 or 4)
+		if (random_number.rand(1..9)) == 1.upto(7)
 			weather = 'stormy'
-		else (random_number.rand(1..5)) == 5
+		else (random_number.rand(1..9)) == (8 or 9)
 			weather = 'sunny'
 		end
 	end

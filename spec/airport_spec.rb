@@ -1,6 +1,5 @@
-require './lib/airport'
-require './lib/plane'
-require './lib/weather'
+require 'airport'
+require 'weather'
 
 describe Airport do
 
