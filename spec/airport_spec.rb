@@ -7,7 +7,7 @@ describe Airport do
   let(:plane) { Plane.new }
 
   it 'has maximum capacity' do
-    expect(airport.capacity).to eq 6
+    expect(airport.capacity).to eq 10
   end   
 
   context 'traffic control' do
@@ -28,13 +28,13 @@ describe Airport do
 
     it 'knows when the airport is full' do
       expect(airport).not_to be_full
-      6.times {airport.gives_permission_to_land_to plane}
+      10.times {airport.gives_permission_to_land_to plane}
       expect(airport).to be_full
     end
 
     it 'denies a landing request if the airport is full' do
       airport.capacity.times {airport.gives_permission_to_land_to plane} 
-      expect{ airport.gives_permission_to_land_to plane }.to raise_error RuntimeError
+      expect{airport.gives_permission_to_land_to plane}.to raise_error RuntimeError
     end
 
   end
@@ -46,11 +46,11 @@ describe Airport do
     end
 
     it 'wont let a plane take off in a stormy weather' do
-      expect{ airport.gives_permission_to_land_to plane }.to raise_error RuntimeError
+      expect{airport.gives_permission_to_land_to plane}.to raise_error RuntimeError
     end
       
     it 'wont let a plane land in the middle of a storm' do
-      expect{ airport.gives_permission_to_take_off_to plane }.to raise_error RuntimeError
+      expect{airport.gives_permission_to_take_off_to plane}.to raise_error RuntimeError
     end
 
   end
