@@ -23,7 +23,7 @@ describe Airport do
 
     it 'gives a plane permission to take off' do
       airport.gives_permission_to_take_off_to plane
-      expect(airport.hangar).to eq []
+      expect(airport.hangar).not_to include plane
     end
 
     it 'knows when the airport is full' do
