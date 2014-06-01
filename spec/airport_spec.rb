@@ -7,7 +7,7 @@ describe Airport do
   let(:plane) { Plane.new }
 
   it 'has maximum capacity' do
-    expect(airport.capacity).to eq 25
+    expect(airport.capacity).to eq 6
   end   
 
   context 'traffic control' do
@@ -28,7 +28,7 @@ describe Airport do
 
     it 'knows when the airport is full' do
       expect(airport).not_to be_full
-      25.times {airport.gives_permission_to_land_to plane}
+      6.times {airport.gives_permission_to_land_to plane}
       expect(airport).to be_full
     end
 

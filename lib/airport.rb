@@ -4,7 +4,7 @@ class Airport
 
   include Weather
 
-  DEFAULT_CAPACITY = 25
+  DEFAULT_CAPACITY = 6
 
   attr_accessor :capacity
 
@@ -14,6 +14,10 @@ class Airport
 
   def hangar
     @hangar ||= []
+  end
+
+  def planes_count
+    hangar.count
   end
 
   def gives_permission_to_land_to plane
@@ -28,7 +32,7 @@ class Airport
   end
 
   def full?
-  	hangar.count == capacity
+  	planes_count == capacity
   end
 
 end
