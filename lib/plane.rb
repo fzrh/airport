@@ -12,13 +12,13 @@ class Plane
 		@flying
 	end
 
-	def take_off
-		@flying
+	def landed
+		@flying = false
 		self
 	end
 
-	def landed
-		@flying = false
+	def take_off!
+		@flying = true
 		self
 	end
 
