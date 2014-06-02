@@ -28,7 +28,7 @@ class Airport
 
   def gives_permission_to_take_off_to plane
   	raise RuntimeError if weather_condition == 'stormy'
-  	@hangar
+  	hangar.delete(plane)
   end
 
   def full?

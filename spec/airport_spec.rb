@@ -39,17 +39,17 @@ describe Airport do
 
   end
 
-  context 'traffic control (bad weather)' do
+  context 'traffic control when in a bad weather' do
 
     before do
       airport.stub(:weather_condition).and_return('stormy')
     end
 
-    it 'wont let a plane take off in a stormy weather' do
+    it 'wont let a plane take off' do
       expect{airport.gives_permission_to_land_to plane}.to raise_error RuntimeError
     end
       
-    it 'wont let a plane land in the middle of a storm' do
+    it 'wont let a plane land' do
       expect{airport.gives_permission_to_take_off_to plane}.to raise_error RuntimeError
     end
 

@@ -18,7 +18,7 @@ describe 'The grand finale' do
    	6.times {plane}
  	6.times {airport.gives_permission_to_land_to plane}
  	expect(airport.planes_count).to eq 6
-  	expect(6.times {plane.landed}).to be_true
+  	expect(6.times {plane.landed!}).to be_true
   end
 
   it 'all planes can take off and change status to "flying"' do
@@ -26,7 +26,7 @@ describe 'The grand finale' do
   	6.times {plane}
   	6.times {airport.gives_permission_to_take_off_to plane}
   	expect(airport.planes_count).to eq 0
-  	expect(6.times {plane.flying?}).to be_true
+  	expect(6.times {plane.status?}).to be_true
   end
 
 end
