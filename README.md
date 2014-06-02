@@ -24,5 +24,6 @@ Finally, every plane must have a status indicating whether it's flying or landed
 + RSpec
 
 #### How to run:
-
-> require './lib/heathrow_airport'
+```shell
+require './lib/airport_control'
+```
