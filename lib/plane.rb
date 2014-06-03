@@ -1,7 +1,7 @@
 class Plane
 
-	def initialize(status='flying')
-		@status = status
+	def initialize
+		@status = 'flying'
 	end
 
 	def status?
@@ -9,15 +9,14 @@ class Plane
 	end
 
 	def take_off!
-		#raise 'You are already in the air!' if status? 'flying'
 		@status = 'flying'
 		self
 	end
 
 	def land!
+		raise 'You are already landed!' if self.status? == 'landed'
 		@status = 'landed'
 		self
 	end
-
 
 end

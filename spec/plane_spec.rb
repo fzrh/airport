@@ -6,27 +6,21 @@ describe Plane do
 
   it 'has a flying status when created' do
     expect(plane.status?).to eq 'flying'
-    # expect(plane).to be_flying
   end
 
   it 'changes its status to "flying" after taking off' do
-    plane.land!.take_off!
+    plane.take_off!
     expect(plane.status?).to eq 'flying'
-  end
-
-  xit 'can not take-off if it is already flying' do
-    expect(plane.status?).to eq 'flying'
-    expect{plane.take_off!}.to raise_error 'You are already in the air!'
   end
 
   it 'changes its status to "landed" after landing' do
-    plane.take_off!.land!
+    plane.land!
     expect(plane.status?).to eq 'landed'
   end
 
-  xit 'can not land if it is already landed' do
-    expect(plane.status?).to eq 'flying'
-    expect{plane.take_off!}.to raise_error 'You are already in the air!'
+  it 'cannot land if it is already landed' do
+    plane.land!
+    expect(lambda {plane.land!}).to raise_error 'You are already landed!'
   end
 
 end
