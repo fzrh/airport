@@ -9,11 +9,12 @@ class Plane
 	end
 
 	def take_off!
+		#raise 'You are already in the air!' if status? 'flying'
 		@status = 'flying'
 		self
 	end
 
-	def landed!
+	def land!
 		@status = 'landed'
 		self
 	end

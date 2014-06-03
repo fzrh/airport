@@ -17,24 +17,26 @@ describe Airport do
     end
 
     it 'gives a plane permission to land' do
-      airport.gives_permission_to_land_to plane
+      airport.give_permission_to_land_to plane
       expect(airport.hangar).to include plane
+      expect(plane.status?).to eq 'landed'
     end
 
     it 'gives a plane permission to take off' do
-      airport.gives_permission_to_take_off_to plane
+      airport.give_permission_to_take_off_to plane
       expect(airport.hangar).not_to include plane
+      expect(plane.status?).to eq 'flying'
     end
 
     it 'knows when the airport is full' do
       expect(airport).not_to be_full
-      10.times {airport.gives_permission_to_land_to plane}
+      airport.capacity.times {airport.give_permission_to_land_to plane}
       expect(airport).to be_full
     end
 
     it 'denies a landing request if the airport is full' do
-      airport.capacity.times {airport.gives_permission_to_land_to plane} 
-      expect{airport.gives_permission_to_land_to plane}.to raise_error RuntimeError
+      airport.capacity.times {airport.give_permission_to_land_to plane} 
+      expect{airport.give_permission_to_land_to plane}.to raise_error 'Sorry, airport is full.'
     end
 
   end
@@ -46,11 +48,11 @@ describe Airport do
     end
 
     it 'wont let a plane take off' do
-      expect{airport.gives_permission_to_land_to plane}.to raise_error RuntimeError
+      expect{airport.give_permission_to_land_to plane}.to raise_error 'Sorry, the weather is stormy.'
     end
       
     it 'wont let a plane land' do
-      expect{airport.gives_permission_to_take_off_to plane}.to raise_error RuntimeError
+      expect{airport.give_permission_to_take_off_to plane}.to raise_error 'Sorry, the weather is stormy.'
     end
 
   end
