@@ -22,13 +22,13 @@ class Airport
 
   def give_permission_to_land_to plane
   	raise 'Sorry, airport is full.' if full?
-  	raise 'Sorry, the weather is stormy.' if weather_condition == 'stormy'
+  	raise 'Sorry, permission to take off denied. The weather is stormy.' if weather_condition == 'stormy'
   	hangar << plane
     plane.land!
   end
 
   def give_permission_to_take_off_to plane
-  	raise 'Sorry, the weather is stormy.' if weather_condition == 'stormy'
+  	raise 'Sorry, permission to land denied. The weather is stormy.' if weather_condition == 'stormy'
   	hangar.delete(plane)
   end
 

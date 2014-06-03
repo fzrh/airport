@@ -48,11 +48,11 @@ describe Airport do
     end
 
     it 'wont let a plane take off' do
-      expect{airport.give_permission_to_land_to plane}.to raise_error 'Sorry, the weather is stormy.'
+      expect{airport.give_permission_to_land_to plane}.to raise_error 'Sorry, permission to take off denied. The weather is stormy.'
     end
       
     it 'wont let a plane land' do
-      expect{airport.give_permission_to_take_off_to plane}.to raise_error 'Sorry, the weather is stormy.'
+      expect{airport.give_permission_to_take_off_to plane}.to raise_error 'Sorry, permission to land denied. The weather is stormy.'
     end
 
   end
