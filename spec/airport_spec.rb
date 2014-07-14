@@ -8,12 +8,17 @@ describe Airport do
 
   it 'has maximum capacity' do
     expect(airport.capacity).to eq 10
+  end
+
+  it 'hangar is empty' do
+    expect(airport.hangar).to be_empty
   end   
 
   context 'traffic control' do
 
     before do
-      airport.stub(:weather_condition).and_return('sunny')
+      allow(airport).to receive(:weather_condition).and_return('sunny')
+      # airport.stub(:weather_condition).and_return('sunny')
     end
 
     it 'gives a plane permission to land' do
@@ -29,12 +34,13 @@ describe Airport do
     end
 
     it 'knows when the airport is full' do
-      expect(airport).not_to be_full
+      plane = double :plane, land!: self
       airport.capacity.times {airport.give_permission_to_land_to plane}
       expect(airport).to be_full
     end
 
     it 'denies a landing request if the airport is full' do
+      plane = double :plane, land!: self
       airport.capacity.times {airport.give_permission_to_land_to plane} 
       expect{airport.give_permission_to_land_to plane}.to raise_error 'Sorry, airport is full.'
     end
@@ -44,7 +50,8 @@ describe Airport do
   context 'traffic control when in a bad weather' do
 
     before do
-      airport.stub(:weather_condition).and_return('stormy')
+      allow(airport).to receive(:weather_condition).and_return('stormy')
+      # airport.stub(:weather_condition).and_return('stormy')
     end
 
     it 'wont let a plane take off' do

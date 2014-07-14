@@ -30,6 +30,7 @@ class Airport
   def give_permission_to_take_off_to plane
   	raise 'Sorry, permission to land denied. The weather is stormy.' if weather_condition == 'stormy'
   	hangar.delete(plane)
+    plane.take_off!
   end
 
   def full?
