@@ -1,5 +1,3 @@
-[ ![Codeship Status for frism/airport](https://codeship.com/projects/66a209f0-5e51-0132-51b1-72d241f098bc/status)](https://codeship.com/projects/51317)
-
 Airport Control Simulator
 --------------------------
 
